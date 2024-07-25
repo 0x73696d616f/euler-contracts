@@ -1,0 +1,32 @@
+{
+    "tokens": {},
+    "modules": {
+        "installer": "0x06fa9fcE77eb8c86B63B2410Fe1b6D03A05e4E28",
+        "markets": "0x8bFacBfeBC3fEF726F2B34Cf53586E9A0423B0bA",
+        "liquidation": "0x4376346Bcb147ed98ff7eB5d968551Fab81820e8",
+        "governance": "0x6F521AF2EDDB7c6211Ea3a6E73b0FFC933B828BC",
+        "exec": "0x0b9837ae31981992Cf0Ab290542C238880159c59",
+        "swap": "0x9b038E5733a5456B6228D35125C7269ce9dD9147",
+        "swapHub": "0x4Fb6ae7F6b6F2206CFDa8bfE8572D0751fDF488F",
+        "eToken": "0xEF14E8ef67CC396C34fe2D2A5577930845aD4390",
+        "dToken": "0x87ccACE36d45946c60951F5fDF8F2e36d2B35110",
+        "riskManager": "0x582Efff0622d3Ceff08D2B190B418d83a74b59fB",
+        "irmDefault": "0xE243cd73A0BC28f5b94687E6e4c50e22df62a456"
+    },
+    "swapHandlers": {
+        "swapHandlerUniswapV3": "0x2f8eC9Ae3F70B4Eab5C4f08f02e3d4A40D3958b9",
+        "swapHandler1Inch": "0xE78F63A2B2685A48172aa188140F9A7D622Fd37B",
+        "swapHandlerUniAutoRouter": "0xA78e68E4773dC75F1008DB548FB4Efa0Eb387605"
+    },
+    "euler": "0xf657D9cB1284d72F4bac0d5006B9C0Ac38B0f00d",
+    "eulerSimpleLens": "0xDEA7821940D9aE0ee7Edb7Ede8c1F1eaf13068A2",
+    "eulerGeneralView": "0xB4A4c18161762e3d9694d33Be8445f26aeC4589a",
+    "installer": "0xB835eD194D9b396d7863FBb99136d94fEF311Aa9",
+    "markets": "0xAa7E572dbA730878478B6c808F5FFA6fa893d43D",
+    "liquidation": "0xA7AF9FC7Cf4142df815528582D0CFE22126fc0C9",
+    "governance": "0x73620776Ba6cEf4454Dc8cdf76f3F185b9300110",
+    "exec": "0x461Be5d11f84e356017f172e3faf73Bb1D1a680E",
+    "swap": "0x01714C92F7f8BA34d9c71897A414C574E06Ca4F2",
+    "swapHub": "0x438D2576a2392D2663E061C5e96Ffb52363281E1",
+    "flashLoan": "0xD6F1aa0eF332838667F38FF679Dd0cBB552d0a4e"
+}

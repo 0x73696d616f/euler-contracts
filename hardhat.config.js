@@ -4,6 +4,7 @@ require("@nomiclabs/hardhat-etherscan");
 require("hardhat-contract-sizer");
 require('hardhat-gas-reporter');
 require("solidity-coverage");
+require("@nomicfoundation/hardhat-foundry");
 
 
 // Load tasks
@@ -13,6 +14,14 @@ const files = fs.readdirSync('./tasks');
 for (let file of files) {
     if (!file.endsWith('.js')) continue;
     require(`./tasks/${file}`);
+}
+
+if (process.env.NODE_ENV) {
+    let path = `.env.${process.env.NODE_ENV}`;
+    if (!fs.existsSync(path)) throw(`unable to open env file: ${path}`);
+    require("dotenv").config({ path, });
+} else if (fs.existsSync('./.env')) {
+    require("dotenv").config();
 }
 
 
@@ -28,6 +37,11 @@ module.exports = {
             chainId: 1,
             url: "http://127.0.0.1:8545",
             timeout: 5 * 60 * 1000, 
+        },
+        harmony_testnet: {
+            chainId: 1666700000,
+            url: "https://api.s0.b.hmny.io",
+            accounts: [process.env.PRIVATE_KEY],
         },
     },
 
@@ -64,15 +78,6 @@ module.exports = {
         timeout: 100000
     }
 };
-
-
-if (process.env.NODE_ENV) {
-    let path = `.env.${process.env.NODE_ENV}`;
-    if (!fs.existsSync(path)) throw(`unable to open env file: ${path}`);
-    require("dotenv").config({ path, });
-} else if (fs.existsSync('./.env')) {
-    require("dotenv").config();
-}
 
 for (let k in process.env) {
     if (k.startsWith("RPC_URL_")) {

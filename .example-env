@@ -1,0 +1,3 @@
+PRIVATE_KEY=
+NETWORK_NAME= // Should be the same as token-setups/ e.g. harmony_testnet
+VERIFY_CONTRACTS=
