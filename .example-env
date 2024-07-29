@@ -1,3 +1,7 @@
 PRIVATE_KEY=
 NETWORK_NAME= // Should be the same as token-setups/ e.g. harmony_testnet
 VERIFY_CONTRACTS=
+RPC_URL= // Not required. Needed for market activation scripts
+MARKET_ADDRESS= // Not required. Needed for market activation scripts
+USDC_ADDRESS= // Not required. Needed for market activation scripts
+WETH_ADDRESS= // Not required. Needed for market activation scripts

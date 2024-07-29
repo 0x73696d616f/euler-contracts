@@ -910,10 +910,10 @@ async function deployContracts(provider, wallets, tokenSetupName, verify = null)
         address: ctx.contracts.modules.exec.address, args: [gitCommit], contractPath: "contracts/modules/Exex.sol:Exec"
     };
 
-    ctx.contracts.modules.swap = await (await ctx.factories.Swap.deploy(gitCommit, swapRouterV3Address, oneInchAddress)).deployed();
-    verification.contracts.modules.swap = {
-        address: ctx.contracts.modules.swap.address, args: [gitCommit, swapRouterV3Address, oneInchAddress], contractPath: "contracts/modules/Swap.sol:Swap"
-    };
+    // ctx.contracts.modules.swap = await (await ctx.factories.Swap.deploy(gitCommit, swapRouterV3Address, oneInchAddress)).deployed();
+    // verification.contracts.modules.swap = {
+    //     address: ctx.contracts.modules.swap.address, args: [gitCommit, swapRouterV3Address, oneInchAddress], contractPath: "contracts/modules/Swap.sol:Swap"
+    // };
     
     ctx.contracts.modules.swapHub = await (await ctx.factories.SwapHub.deploy(gitCommit)).deployed();
     verification.contracts.modules.swapHub = {
@@ -996,7 +996,7 @@ async function deployContracts(provider, wallets, tokenSetupName, verify = null)
             'liquidation',
             'governance',
             'exec',
-            'swap',
+            // 'swap',
             'swapHub',
 
             'eToken',
@@ -1030,7 +1030,7 @@ async function deployContracts(provider, wallets, tokenSetupName, verify = null)
     ctx.contracts.liquidation = await ethers.getContractAt('Liquidation', await ctx.contracts.euler.moduleIdToProxy(moduleIds.LIQUIDATION));
     ctx.contracts.governance = await ethers.getContractAt('Governance', await ctx.contracts.euler.moduleIdToProxy(moduleIds.GOVERNANCE));
     ctx.contracts.exec = await ethers.getContractAt('Exec', await ctx.contracts.euler.moduleIdToProxy(moduleIds.EXEC));
-    ctx.contracts.swap = await ethers.getContractAt('Swap', await ctx.contracts.euler.moduleIdToProxy(moduleIds.SWAP));
+    // ctx.contracts.swap = await ethers.getContractAt('Swap', await ctx.contracts.euler.moduleIdToProxy(moduleIds.SWAP));
     ctx.contracts.swapHub = await ethers.getContractAt('SwapHub', await ctx.contracts.euler.moduleIdToProxy(moduleIds.SWAP_HUB));
 
     // Deploy swap handlers
@@ -1039,17 +1039,17 @@ async function deployContracts(provider, wallets, tokenSetupName, verify = null)
         address: ctx.contracts.swapHandlers.swapHandlerUniswapV3.address, args: [swapRouterV3Address], contractPath: "contracts/swapHandlers/SwapHandlerUniswapV3.sol:SwapHandlerUniswapV3"
     };
 
-    ctx.contracts.swapHandlers.swapHandler1Inch = await (await ctx.factories.SwapHandler1Inch.deploy(oneInchAddress, swapRouterV2Address, swapRouterV3Address)).deployed();
-    verification.contracts.swapHandlers.swapHandler1Inch = {
-        address: ctx.contracts.swapHandlers.swapHandler1Inch.address, args: [oneInchAddress, swapRouterV2Address, swapRouterV3Address], contractPath: "contracts/swapHandlers/SwapHandler1Inch.sol:SwapHandler1Inch"
-    };
+    // ctx.contracts.swapHandlers.swapHandler1Inch = await (await ctx.factories.SwapHandler1Inch.deploy(oneInchAddress, swapRouterV2Address, swapRouterV3Address)).deployed();
+    // verification.contracts.swapHandlers.swapHandler1Inch = {
+    //     address: ctx.contracts.swapHandlers.swapHandler1Inch.address, args: [oneInchAddress, swapRouterV2Address, swapRouterV3Address], contractPath: "contracts/swapHandlers/SwapHandler1Inch.sol:SwapHandler1Inch"
+    // };
     
-    ctx.contracts.swapHandlers.swapHandlerUniAutoRouter = await (await ctx.factories.SwapHandlerUniAutoRouter.deploy(swapRouter02Address, swapRouterV2Address, swapRouterV3Address)).deployed();
-    verification.contracts.swapHandlers.swapHandlerUniAutoRouter = {
-        address: ctx.contracts.swapHandlers.swapHandlerUniAutoRouter.address, 
-        args: [swapRouter02Address, swapRouterV2Address, swapRouterV3Address], 
-        contractPath: "contracts/swapHandlers/SwapHandlerUniAutoRouter.sol:SwapHandlerUniAutoRouter"
-    };
+    // ctx.contracts.swapHandlers.swapHandlerUniAutoRouter = await (await ctx.factories.SwapHandlerUniAutoRouter.deploy(swapRouter02Address, swapRouterV2Address, swapRouterV3Address)).deployed();
+    // verification.contracts.swapHandlers.swapHandlerUniAutoRouter = {
+    //     address: ctx.contracts.swapHandlers.swapHandlerUniAutoRouter.address, 
+    //     args: [swapRouter02Address, swapRouterV2Address, swapRouterV3Address], 
+    //     contractPath: "contracts/swapHandlers/SwapHandlerUniAutoRouter.sol:SwapHandlerUniAutoRouter"
+    // };
 
     if (ctx.tokenSetup.testing) {
         // Setup default ETokens/DTokens

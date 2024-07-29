@@ -43,6 +43,11 @@ module.exports = {
             url: "https://api.s0.b.hmny.io",
             accounts: [process.env.PRIVATE_KEY],
         },
+        harmony: {
+            chainId: 1666600000,
+            url: "https://api.s0.t.hmny.io",
+            accounts: [process.env.PRIVATE_KEY],
+        },
     },
 
     solidity: {
