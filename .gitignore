@@ -12,3 +12,4 @@ detect-permit-errors.log
 accountsAtRiskOfViolation.json
 accountsInViolation.json
 out
+cache_hardhat
